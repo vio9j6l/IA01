@@ -58,6 +58,7 @@ public class Demo
         String userInput = keyboard.nextLine();
 
         String nextRound = Character.toString('Y');
+        String endRound = Character.toString('N');
 
         /*
          * While loop will continue displaying questions and their answers
@@ -85,13 +86,15 @@ public class Demo
             System.out.print("Another number? ");
             userInput = keyboard.nextLine();
         }
-        System.out.println("\nGame over");
-        System.out.println("You answered " + answerList.size() + " questions");
-        System.out.println(correctList.size() + " were right");
-        System.out.println(wrongList.size() + " were wrong");
-        getPercentageGrade(correctList, answerList);
-        getHighestRandomNumber(randomList);
-        getLowestRandomNumber(randomList);
+        if (userInput.equals(endRound)){
+            System.out.println("\nGame over");
+            System.out.println("You answered " + answerList.size() + " questions");
+            System.out.println(correctList.size() + " were right");
+            System.out.println(wrongList.size() + " were wrong");
+            getPercentageGrade(correctList, answerList);
+            getHighestRandomNumber(randomList);
+            getLowestRandomNumber(randomList);
+        }
     }
 
     /*
